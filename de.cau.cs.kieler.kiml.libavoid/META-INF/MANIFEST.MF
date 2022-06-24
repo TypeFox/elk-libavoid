@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: KIELER Bridge for Libavoid Layout
+Bundle-SymbolicName: de.cau.cs.kieler.kiml.libavoid;singleton:=true
+Bundle-Version: 0.45.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Kiel University
+Bundle-Activator: de.cau.cs.kieler.kiml.libavoid.LibavoidPlugin
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.google.guava,
+ org.eclipse.core.runtime,
+ org.eclipse.elk.core.service,
+ org.eclipse.elk.graph,
+ org.eclipse.elk.alg.common
+Export-Package: de.cau.cs.kieler.kiml.libavoid,
+ de.cau.cs.kieler.kiml.libavoid.server
