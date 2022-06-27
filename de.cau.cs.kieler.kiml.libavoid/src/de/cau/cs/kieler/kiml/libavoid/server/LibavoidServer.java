@@ -106,11 +106,11 @@ public class LibavoidServer {
     private int processTimeout = PROCESS_DEF_TIMEOUT;
 
     /** the relative path for the linux64 executable. */
-    public static final String EXECUTABLE_PATH_LINUX64 = "/libavoid-server/linux/libavoid-server";
+    public static final String EXECUTABLE_PATH_LINUX64 = "/libavoid-server/libavoid-server-linux";
     /** the relative path for the win64 executable. */
-    public static final String EXECUTABLE_PATH_WIN64 = "/libavoid-server/win/libavoid-server.exe";
+    public static final String EXECUTABLE_PATH_WIN64 = "/libavoid-server/libavoid-server-win.exe";
     /** the relative path for the osx64 executable. */
-    public static final String EXECUTABLE_PATH_OSX64 = "/libavoid-server/macos/libavoid-server";
+    public static final String EXECUTABLE_PATH_OSX64 = "/libavoid-server/libavoid-server-macos";
 
     /** the size for file transfer buffers. */
     public static final int BUFFER_SIZE = 512;
@@ -203,7 +203,6 @@ public class LibavoidServer {
         }
 
         if (process == null) {
-            System.out.println("Creating new Process!");
             try {
                 if (executable == null) {
                     executable = resolveExecutable().getPath();

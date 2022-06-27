@@ -86,8 +86,8 @@ public class LibavoidServerCommunicator {
     private static final int LAYOUT_WORK = SUBTASK_WORK + SUBTASK_WORK + SUBTASK_WORK
             + SUBTASK_WORK;
 
-    /** String buffer holding the textual graph. */
-    private StringBuffer sb = new StringBuffer();
+    /** String builder holding the textual graph. */
+    private StringBuilder sb = new StringBuilder();
 
     /** The direction of the current drawing. */
     private Direction currentDirection = Direction.UNDEFINED;
@@ -103,7 +103,7 @@ public class LibavoidServerCommunicator {
         portIdMap.clear();
         edgeIdCounter = 1;
         edgeIdMap.clear();
-        sb = new StringBuffer();
+        sb = new StringBuilder();
     }
 
     /**
