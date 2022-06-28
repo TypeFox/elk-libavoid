@@ -17,6 +17,9 @@ jobs:
       with:
         java-version: 11
         distribution: adopt
+
+
+    # Maven build start
     - name: Cache Maven packages
       uses: actions/cache@v2
       with:
@@ -25,6 +28,9 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: Create P2 update repository
       run: |
+        mkdir -p de.cau.cs.kieler.kiml.libavoid/libavoid-server/
+        touch de.cau.cs.kieler.kiml.libavoid/libavoid-server/libavoid-server-macosx
+        touch de.cau.cs.kieler.kiml.libavoid/libavoid-server/libavoid-server-linux
         mvn clean package
     - name: Archive P2 Repository
       uses: actions/upload-artifact@v2
@@ -36,3 +42,11 @@ jobs:
     - name: Purge Artifacts from Cache
       run: |
         mvn dependency:purge-local-repository -DmanualInclude=de.cau.cs.kieler.kiml.libavoid -ntp
+    # Maven build end
+
+    - name: Publish to GH packages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: releng/repository/target/repository/
+        destination_dir: download/updates/${{ github.ref_name }}
