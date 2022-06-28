@@ -18,6 +18,15 @@ jobs:
         java-version: 11
         distribution: adopt
 
+    # Download libavoid-server binaries
+    - name: Download libavoid-server binary
+    uses: dsaltares/fetch-gh-release-asset@master
+    with:
+      repo: 'TypeFox/libavoid-server'
+      regex: true
+      file: "libavoid-server-.*"
+      target: 'de.cau.cs.kieler.kiml.libavoid/libavoid-server/'
+      token: ${{ secrets.GITHUB_TOKEN }}
 
     # Maven build start
     - name: Cache Maven packages
@@ -28,9 +37,6 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: Create P2 update repository
       run: |
-        mkdir -p de.cau.cs.kieler.kiml.libavoid/libavoid-server/
-        touch de.cau.cs.kieler.kiml.libavoid/libavoid-server/libavoid-server-macosx
-        touch de.cau.cs.kieler.kiml.libavoid/libavoid-server/libavoid-server-linux
         mvn clean package
     - name: Archive P2 Repository
       uses: actions/upload-artifact@v2
