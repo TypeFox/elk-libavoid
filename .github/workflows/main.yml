@@ -1,0 +1,38 @@
+name: Build Elk libavoid repository
+
+on:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "v*.*.*"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: 11
+        distribution: adopt
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - name: Create P2 update repository
+      run: |
+        mvn clean package
+    - name: Archive P2 Repository
+      uses: actions/upload-artifact@v2
+      with:
+        name: p2-update-site
+        path: |
+          releng/repository/target/repository
+        retention-days: 5
+    - name: Purge Artifacts from Cache
+      run: |
+        mvn dependency:purge-local-repository -DmanualInclude=de.cau.cs.kieler.kiml.libavoid -ntp
