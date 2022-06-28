@@ -3,10 +3,10 @@ name: Build Elk libavoid repository
 on:
   push:
     branches:
-      - "**"
-    tags-ignore:
+      - "main"
+    tags:
       - "v*.*.*"
-  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +23,7 @@ jobs:
       uses: dsaltares/fetch-gh-release-asset@master
       with:
         repo: 'TypeFox/libavoid-server'
+        version: 'tags/v0.1.0'
         regex: true
         file: "libavoid-server-.*"
         target: 'de.cau.cs.kieler.kiml.libavoid/libavoid-server/'
