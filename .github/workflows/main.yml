@@ -20,13 +20,13 @@ jobs:
 
     # Download libavoid-server binaries
     - name: Download libavoid-server binary
-    uses: dsaltares/fetch-gh-release-asset@master
-    with:
-      repo: 'TypeFox/libavoid-server'
-      regex: true
-      file: "libavoid-server-.*"
-      target: 'de.cau.cs.kieler.kiml.libavoid/libavoid-server/'
-      token: ${{ secrets.GITHUB_TOKEN }}
+      uses: dsaltares/fetch-gh-release-asset@master
+      with:
+        repo: 'TypeFox/libavoid-server'
+        regex: true
+        file: "libavoid-server-.*"
+        target: 'de.cau.cs.kieler.kiml.libavoid/libavoid-server/'
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     # Maven build start
     - name: Cache Maven packages
@@ -37,6 +37,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: Create P2 update repository
       run: |
+        ls -al de.cau.cs.kieler.kiml.libavoid/libavoid-server/
         mvn clean package
     - name: Archive P2 Repository
       uses: actions/upload-artifact@v2
