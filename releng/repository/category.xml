@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="de.cau.cs.kieler.kiml.libavoid.feature">
+      <category name="elk-libavoid"/>
+   </feature>
+   <category-def name="elk-libavoid" label="KIELER Bridge for Libavoid Layout">
+      <description>
+         KIELER Bridge for Libavoid Layout Feature
+      </description>
+   </category-def>
+   <feature id="de.cau.cs.kieler.kiml.libavoid.feature.source">
+      <category name="elk-libavoid-src"/>
+   </feature>
+   <category-def name="elk-libavoid-src" label="KIELER Bridge for Libavoid Layout (Sources)">
+      <description>
+         KIELER Bridge for Libavoid Layout Feature Sources
+      </description>
+   </category-def>
+</site>
