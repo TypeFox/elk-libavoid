@@ -21,7 +21,9 @@ and ports need to have predetermined positions.
    </copyright>
 
    <license url="https://www.eclipse.org/legal/epl-2.0/">
-      This feature and its contained Java code as well as the libavoid-server
+      Eclipse Public License 2.0 and LGPL 2.1
+
+This feature and its contained Java code as well as the libavoid-server
 executables are made available under the Eclipse Public License
 version 2.0 (EPL-2.0).
 
