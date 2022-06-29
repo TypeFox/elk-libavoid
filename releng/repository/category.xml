@@ -3,17 +3,12 @@
    <feature id="de.cau.cs.kieler.kiml.libavoid.feature">
       <category name="elk-libavoid"/>
    </feature>
-   <category-def name="elk-libavoid" label="KIELER Bridge for Libavoid Layout">
-      <description>
-         KIELER Bridge for Libavoid Layout Feature
-      </description>
-   </category-def>
    <feature id="de.cau.cs.kieler.kiml.libavoid.feature.source">
-      <category name="elk-libavoid-src"/>
+      <category name="elk-libavoid"/>
    </feature>
-   <category-def name="elk-libavoid-src" label="KIELER Bridge for Libavoid Layout (Sources)">
+   <category-def name="elk-libavoid" label="Libavoid Integration for ELK">
       <description>
-         KIELER Bridge for Libavoid Layout Feature Sources
+         This feature integrates the libavoid library (https://www.adaptagrams.org/documentation/libavoid.html) with Eclipse Layout Kernel (ELK) to provide high-quality edge routing to the Eclipse Platform.
       </description>
    </category-def>
 </site>
