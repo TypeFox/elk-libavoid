@@ -40,6 +40,7 @@ jobs:
       run: |
         ls -al de.cau.cs.kieler.kiml.libavoid/libavoid-server/
         mvn clean package
+        cp releng/repository/repo-index.html releng/repository/target/repository/index.html
     - name: Archive P2 Repository
       uses: actions/upload-artifact@v2
       with:

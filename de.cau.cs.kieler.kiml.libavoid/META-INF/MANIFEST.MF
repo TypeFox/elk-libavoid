@@ -14,5 +14,6 @@ Require-Bundle: com.google.guava,
  org.eclipse.elk.graph,
  org.eclipse.elk.alg.common
 Export-Package: de.cau.cs.kieler.kiml.libavoid,
+ de.cau.cs.kieler.kiml.libavoid.options,
  de.cau.cs.kieler.kiml.libavoid.server
 Automatic-Module-Name: de.cau.cs.kieler.kiml.libavoid
