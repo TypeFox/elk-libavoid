@@ -1,4 +1,4 @@
-name: Build Elk libavoid repository
+name: Build
 
 on:
   push:
