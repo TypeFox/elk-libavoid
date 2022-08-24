@@ -30,3 +30,7 @@ On each tag push, the [main](https://github.com/TypeFox/elk-libavoid/blob/main/.
  - Publish the repository to the corresponding update site. For tag `v0.1.0` the repository will be published under following URL: `https://typefox.github.io/elk-libavoid/download/updates/v0.1.0/`
 
 **Note:** The published repository location will be completely replaced. Pushing the same tag twice will replace the existing p2 repository with the new version.
+
+## License
+
+This project is licensed under [Eclipse Public License v2.0](https://www.eclipse.org/legal/epl-2.0/). The libavoid library is licensed under [GNU Lesser General Public License v2.1](https://github.com/mjwybrow/adaptagrams/blob/master/cola/LICENSE) and its source code is available at [mjwybrow/adaptagrams](https://github.com/mjwybrow/adaptagrams).
