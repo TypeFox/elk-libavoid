@@ -1,3 +1,7 @@
+### _THIS PROJECT HAS BEEN MOVED_
+
+The libavoid integration plug-in is now part of the [eclipse/elk](https://github.com/eclipse/elk) repository. Details are available in the [reference documentation](https://www.eclipse.org/elk/reference/algorithms/org-eclipse-elk-alg-libavoid.html).
+
 # ELK Libavoid
 
 [![Build](https://github.com/TypeFox/elk-libavoid/actions/workflows/main.yml/badge.svg)](https://github.com/TypeFox/elk-libavoid/actions/workflows/main.yml)
